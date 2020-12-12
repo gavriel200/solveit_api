@@ -2,10 +2,11 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+.dockerignore
 # C extensions
 *.so
-
+test_sudokuAPI.py
+.gitignore
 # Distribution / packaging
 .Python
 build/
