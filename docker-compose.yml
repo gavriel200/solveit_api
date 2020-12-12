@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASS}
+      MYSQL_DATABASE: sudoku_boards
+    restart: 
+      always
+    
+
+  sudokusolver:
+    image: sudokuapi:1.0
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 5000:5000
+    restart:
+      always
+    links:
+    - db:mysql
+    environment: 
+      - MYSQL_PASSWORD=${MYSQL_PASS}
+    volumes: 
+      - "${LOG_DIR}:/app/logs"
