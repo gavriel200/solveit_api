@@ -106,7 +106,6 @@ The other two urls are used for:
 
 If you want to run this API on a stand alone machine/ network that has no access to the internet you will have to folow this steps:
 
-1.
 you will need to run the Dockerfile:
 
 ```bash
